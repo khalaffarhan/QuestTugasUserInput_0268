@@ -59,3 +59,39 @@ import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BiodataScreen(modifier: Modifier = Modifier) {
+    // ---------- State ----------
+    var firstName by remember { mutableStateOf("") }
+    var lastName by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var birthDate by remember { mutableStateOf("") }
+    var experience by remember { mutableStateOf("") }
+    var showDatePicker by remember { mutableStateOf(false) }
+    var expanded by remember { mutableStateOf(false) }
+
+    val experienceOptions = stringArrayResource(R.array.experience_options)
+    val skillOptions = stringArrayResource(R.array.skill_options)
+    val skillChecked = remember { mutableStateListOf<Boolean>().apply { repeat(skillOptions.size) { add(false) } } }
+
+    val isFormValid = firstName.isNotBlank() &&
+            lastName.isNotBlank() &&
+            email.isNotBlank() &&
+            birthDate.isNotBlank() &&
+            experience.isNotBlank() &&
+            skillChecked.any { it }
+
+    val fieldShape = RoundedCornerShape(dimensionResource(R.dimen.field_corner))
+    val fieldColors = OutlinedTextFieldDefaults.colors(
+        focusedBorderColor = colorResource(R.color.title_purple),
+        unfocusedBorderColor = colorResource(R.color.field_outline),
+        focusedTextColor = colorResource(R.color.text_primary),
+        unfocusedTextColor = colorResource(R.color.text_primary),
+        focusedLabelColor = colorResource(R.color.title_purple),
+        unfocusedLabelColor = colorResource(R.color.field_hint),
+        cursorColor = colorResource(R.color.title_purple)
+    )
+    val datePattern = stringResource(R.string.date_pattern)
+    val bodySize: TextUnit = dimensionResource(R.dimen.body_size).value.sp
+
