@@ -6,3 +6,5 @@
     <color name="screen_background">#FFF7F5FF</color>
     <color name="card_background">#FFFFFFFF</color>
 
+    <color name="title_purple">#FF673AB7</color>
+    <color name="subtitle_gray">#FF757575</color>
