@@ -95,3 +95,18 @@ fun BiodataScreen(modifier: Modifier = Modifier) {
     val datePattern = stringResource(R.string.date_pattern)
     val bodySize: TextUnit = dimensionResource(R.dimen.body_size).value.sp
 
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(colorResource(R.color.screen_background))
+    ) {
+        // Gambar latar belakang
+        Image(
+            painter = painterResource(R.drawable.bg_foto),
+            contentDescription = stringResource(R.string.cd_background),
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(dimensionResource(R.dimen.image_height))
+        )
+
