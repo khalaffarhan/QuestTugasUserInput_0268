@@ -16,3 +16,6 @@
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Batal</string>
 
+    <string name="cd_background">Gambar latar belakang spider</string>
+    <string name="cd_pick_date">Pilih tanggal lahir</string>
+
