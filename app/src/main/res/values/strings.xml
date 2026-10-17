@@ -28,3 +28,9 @@
         <item>Lebih dari 5 tahun</item>
     </string-array>
 
+    <string-array name="skill_options">
+        <item>Android</item>
+        <item>UI/UX</item>
+        <item>Web</item>
+    </string-array>
+</resources>
