@@ -128,3 +128,34 @@ fun BiodataScreen(modifier: Modifier = Modifier) {
             }
         }
 
+        // ===== BOX MENGAPUNG DI ATAS SCAFFOLD =====
+        val cardShape = RoundedCornerShape(
+            topStart = dimensionResource(R.dimen.card_corner_large),
+            topEnd = dimensionResource(R.dimen.card_corner_large),
+            bottomStart = dimensionResource(R.dimen.card_corner_small),
+            bottomEnd = dimensionResource(R.dimen.card_corner_small)
+        )
+        Box(
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(
+                    top = dimensionResource(R.dimen.card_margin_top),
+                    bottom = dimensionResource(R.dimen.card_margin_bottom)
+                )
+                .fillMaxWidth()
+                .shadow(
+                    elevation = dimensionResource(R.dimen.card_elevation),
+                    shape = cardShape,
+                    spotColor = colorResource(R.color.card_shadow)
+                )
+                .background(colorResource(R.color.card_background), cardShape)
+        ) {
+            Column(
+                modifier = Modifier
+                    .verticalScroll(rememberScrollState())
+                    .padding(
+                        horizontal = dimensionResource(R.dimen.card_padding_horizontal),
+                        vertical = dimensionResource(R.dimen.card_padding_vertical)
+                    ),
+                horizontalAlignment = Alignment.CenterHorizontally
+            )
