@@ -331,3 +331,34 @@ fun BiodataScreen(modifier: Modifier = Modifier) {
         }
     }
 
+    // ---------- Date Picker ----------
+    if (showDatePicker) {
+        val datePickerState = rememberDatePickerState()
+        DatePickerDialog(
+            onDismissRequest = { showDatePicker = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    datePickerState.selectedDateMillis?.let { millis ->
+                        birthDate = formatDate(millis, datePattern)
+                    }
+                    showDatePicker = false
+                }) { Text(stringResource(R.string.dialog_ok)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDatePicker = false }) {
+                    Text(stringResource(R.string.dialog_cancel))
+                }
+            }
+        ) {
+            DatePicker(state = datePickerState)
+        }
+    }
+}
+
+private const val UTC_ZONE = "UTC"
+
+private fun formatDate(millis: Long, pattern: String): String {
+    val formatter = SimpleDateFormat(pattern, Locale.getDefault())
+    formatter.timeZone = TimeZone.getTimeZone(UTC_ZONE)
+    return formatter.format(Date(millis))
+}
