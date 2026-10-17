@@ -7,3 +7,8 @@
     <dimen name="card_corner_large">40dp</dimen>
     <dimen name="card_corner_small">8dp</dimen>
     <dimen name="card_elevation">16dp</dimen>
+    <dimen name="card_padding_horizontal">24dp</dimen>
+    <dimen name="card_padding_vertical">32dp</dimen>
+
+    <dimen name="title_size">28sp</dimen>
+    <dimen name="subtitle_size">12sp</dimen>
