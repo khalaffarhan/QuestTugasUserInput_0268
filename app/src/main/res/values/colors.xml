@@ -20,3 +20,7 @@
     <color name="button_text_enabled">#FFFFFFFF</color>
     <color name="button_text_disabled">#FFF5F5F5</color>
 
+    <color name="dot_active">#FF2979FF</color>
+    <color name="dot_inactive">#FF8A8A8A</color>
+    <color name="card_shadow">#FF000000</color>
+</resources>
