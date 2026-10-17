@@ -202,3 +202,15 @@ fun BiodataScreen(modifier: Modifier = Modifier) {
                 }
                 Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
 
+                // Email
+                OutlinedTextField(
+                    value = email,
+                    onValueChange = { email = it },
+                    placeholder = { Text(stringResource(R.string.hint_email), fontSize = bodySize) },
+                    singleLine = true,
+                    shape = fieldShape,
+                    colors = fieldColors,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
+
