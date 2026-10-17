@@ -17,3 +17,6 @@
 
     <color name="button_enabled">#FF673AB7</color>
     <color name="button_disabled">#FFE0E0E0</color>
+    <color name="button_text_enabled">#FFFFFFFF</color>
+    <color name="button_text_disabled">#FFF5F5F5</color>
+
