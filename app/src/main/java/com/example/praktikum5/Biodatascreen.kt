@@ -307,3 +307,27 @@ fun BiodataScreen(modifier: Modifier = Modifier) {
                 }
                 Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
 
+                // Tombol Proceed
+                Button(
+                    onClick = { /* aksi proceed */ },
+                    enabled = isFormValid,
+                    shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner)),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = colorResource(R.color.button_enabled),
+                        contentColor = colorResource(R.color.button_text_enabled),
+                        disabledContainerColor = colorResource(R.color.button_disabled),
+                        disabledContentColor = colorResource(R.color.button_text_disabled)
+                    ),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(dimensionResource(R.dimen.button_height))
+                ) {
+                    Text(
+                        text = stringResource(R.string.button_proceed),
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+        }
+    }
+
