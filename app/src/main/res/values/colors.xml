@@ -8,3 +8,7 @@
 
     <color name="title_purple">#FF673AB7</color>
     <color name="subtitle_gray">#FF757575</color>
+    <color name="text_primary">#FF1C1B1F</color>
+    <color name="field_outline">#FF555555</color>
+    <color name="field_hint">#FF444444</color>
+
