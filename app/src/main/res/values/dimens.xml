@@ -21,3 +21,11 @@
     <dimen name="space_medium">16dp</dimen>
     <dimen name="space_large">24dp</dimen>
 
+    <dimen name="field_corner">24dp</dimen>
+    <dimen name="button_corner">20dp</dimen>
+    <dimen name="button_height">52dp</dimen>
+
+    <dimen name="dot_size">6dp</dimen>
+    <dimen name="dot_spacing">4dp</dimen>
+    <dimen name="dot_padding">16dp</dimen>
+</resources>
