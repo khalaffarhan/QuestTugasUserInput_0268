@@ -110,3 +110,21 @@ fun BiodataScreen(modifier: Modifier = Modifier) {
                 .height(dimensionResource(R.dimen.image_height))
         )
 
+        // Indikator titik di atas gambar
+        Row(
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(dimensionResource(R.dimen.dot_padding)),
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.dot_spacing))
+        ) {
+            repeat(integerResource(R.integer.pager_dot_count)) { index ->
+                val color = if (index == integerResource(R.integer.pager_dot_active_index))
+                    colorResource(R.color.dot_active) else colorResource(R.color.dot_inactive)
+                Box(
+                    modifier = Modifier
+                        .size(dimensionResource(R.dimen.dot_size))
+                        .background(color, CircleShape)
+                )
+            }
+        }
+
