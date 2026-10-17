@@ -214,3 +214,62 @@ fun BiodataScreen(modifier: Modifier = Modifier) {
                 )
                 Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
 
+                // Tgl Lahir & Experience
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.space_small))
+                ) {
+                    OutlinedTextField(
+                        value = birthDate,
+                        onValueChange = {},
+                        readOnly = true,
+                        placeholder = { Text(stringResource(R.string.hint_birth_date), fontSize = bodySize) },
+                        trailingIcon = {
+                            IconButton(onClick = { showDatePicker = true }) {
+                                Icon(
+                                    painter = painterResource(R.drawable.ic_calendar),
+                                    contentDescription = stringResource(R.string.cd_pick_date),
+                                    tint = colorResource(R.color.text_primary)
+                                )
+                            }
+                        },
+                        singleLine = true,
+                        shape = fieldShape,
+                        colors = fieldColors,
+                        modifier = Modifier.weight(1f)
+                    )
+
+                    ExposedDropdownMenuBox(
+                        expanded = expanded,
+                        onExpandedChange = { expanded = it },
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        OutlinedTextField(
+                            value = experience,
+                            onValueChange = {},
+                            readOnly = true,
+                            placeholder = { Text(stringResource(R.string.hint_experience), fontSize = bodySize) },
+                            trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                            singleLine = true,
+                            shape = fieldShape,
+                            colors = fieldColors,
+                            modifier = Modifier.menuAnchor()
+                        )
+                        ExposedDropdownMenu(
+                            expanded = expanded,
+                            onDismissRequest = { expanded = false }
+                        ) {
+                            experienceOptions.forEach { option ->
+                                DropdownMenuItem(
+                                    text = { Text(option) },
+                                    onClick = {
+                                        experience = option
+                                        expanded = false
+                                    }
+                                )
+                            }
+                        }
+                    }
+                }
+                Spacer(Modifier.height(dimensionResource(R.dimen.space_medium)))
+
